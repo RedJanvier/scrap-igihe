@@ -4,7 +4,8 @@
   "description": "This is a simple application of web scrapping JS Library Cheerio and Request with express framework.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon scrap.js"
+    "dev": "nodemon server",
+    "start": "node server"
   },
   "keywords": ["webscrapping", "scrap", "igihe.com"],
   "author": "RedJanvier",
