@@ -1,0 +1,20 @@
+{
+  "name": "scrap-igihe",
+  "version": "1.0.0",
+  "description": "This is a simple application of web scrapping JS Library Cheerio and Request with express framework.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon scrap.js"
+  },
+  "keywords": ["webscrapping", "scrap", "igihe.com"],
+  "author": "RedJanvier",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3"
+  }
+}
