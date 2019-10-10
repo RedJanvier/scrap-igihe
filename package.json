@@ -7,12 +7,17 @@
     "dev": "nodemon server",
     "start": "node server"
   },
-  "keywords": ["webscrapping", "scrap", "igihe.com"],
+  "keywords": [
+    "webscrapping",
+    "scrap",
+    "igihe.com"
+  ],
   "author": "RedJanvier",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.17.1",
+    "knex": "^0.19.5",
     "request": "^2.88.0"
   },
   "devDependencies": {
