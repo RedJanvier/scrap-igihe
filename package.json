@@ -1,27 +1,36 @@
 {
-  "name": "scrap-igihe",
-  "version": "1.0.0",
-  "description": "This is a simple application of web scrapping JS Library Cheerio and Request with express framework.",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon server",
-    "start": "node server"
-  },
-  "keywords": [
-    "webscrapping",
-    "scrap",
-    "igihe.com"
-  ],
-  "author": "RedJanvier",
-  "license": "ISC",
-  "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "express": "^4.17.1",
-    "knex": "^0.19.5",
-    "pg": "^7.12.1",
-    "request": "^2.88.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
+    "name": "scrap-igihe",
+    "version": "1.0.0",
+    "description": "This is a simple application of web scrapping JS Library Cheerio and Request with express framework.",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon --exec babel-node app",
+        "start": "babel-node app"
+    },
+    "keywords": [
+        "webscrapping",
+        "scrap",
+        "igihe.com"
+    ],
+    "author": "RedJanvier",
+    "license": "ISC",
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.3",
+        "express": "^4.17.1",
+        "knex": "^0.19.5",
+        "pg": "^7.12.1",
+        "request": "^2.88.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.8.4",
+        "@babel/core": "^7.9.0",
+        "@babel/node": "^7.8.7",
+        "@babel/preset-env": "^7.9.0",
+        "@babel/register": "^7.9.0",
+        "eslint": "^6.8.0",
+        "eslint-config-prettier": "^6.10.1",
+        "eslint-plugin-prettier": "^3.1.2",
+        "nodemon": "^2.0.2",
+        "prettier": "^2.0.2"
+    }
 }
