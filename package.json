@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node app",
-    "start": "babel-node app",
+    "start": "cross-env NODE_ENV=production babel-node app",
     "reset:db": "(dropdb --if-exists -U postgres igihe2 && createdb -U postgres igihe2)",
     "migrate": "npm run reset:db && knex migrate:latest",
     "seed": "npm run migrate && knex seed:run",
-    "test": "cross-env NODE_ENV=test npm run seed && cross-env NODE_ENV=test mocha --require @babel/register tests/*.test.js --exit"
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "test": "cross-env NODE_ENV=test npm run seed && cross-env NODE_ENV=test mocha --require @babel/register tests/*.test.js --timeout 100000 --exit"
   },
   "keywords": [
     "webscrapping",
@@ -38,6 +39,7 @@
     "@babel/runtime": "^7.9.2",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "coveralls": "^3.0.11",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.10.1",
@@ -45,6 +47,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "mocha": "^7.1.1",
     "nodemon": "^2.0.2",
+    "nyc": "^15.0.1",
     "prettier": "^2.0.2"
   }
 }
