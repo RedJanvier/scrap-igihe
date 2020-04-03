@@ -1,10 +1,9 @@
-const express = require('express')
-const router = express.Router();
-const c = require('../controllers/posts');
+import { Router } from 'express';
+import { get_all, get_single } from '../controllers/posts';
 
-router.get('/', c.get_all);
-router.get('/post', c.get_single);
+const router = Router();
 
+router.get('/', get_all);
+router.get('/post', get_single);
 
-
-module.exports = router;
+export default router;
