@@ -1,8 +1,7 @@
-const knex = require('knex');
+import knex from 'knex';
 
-db = knex({
-    client: 'pg',
-    connection: process.env.DATABASE_URL || 'postgres://RedJanvier:Jannyda1@localhost:5432/igihe'
-});
+import setup from '../../knexfile';
 
-module.exports = db;
+const db = knex(setup[process.env.NODE_ENV]);
+
+export default db;

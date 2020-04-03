@@ -4,8 +4,13 @@
   "description": "This is a simple application of web scrapping JS Library Cheerio and Request with express framework.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server",
-    "start": "node server"
+    "dev": "nodemon --exec babel-node app",
+    "start": "cross-env NODE_ENV=production babel-node app",
+    "reset:db": "(dropdb --if-exists -U postgres igihe2 && createdb -U postgres igihe2)",
+    "migrate": "npm run reset:db && knex migrate:latest",
+    "seed": "npm run migrate && knex seed:run",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "test": "cross-env NODE_ENV=test npm run seed && cross-env NODE_ENV=test mocha --require @babel/register tests/*.test.js --timeout 100000 --exit"
   },
   "keywords": [
     "webscrapping",
@@ -16,12 +21,33 @@
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
+    "colors": "^1.4.0",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "knex": "^0.19.5",
     "pg": "^7.12.1",
     "request": "^2.88.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.0.11",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "mocha": "^7.1.1",
+    "nodemon": "^2.0.2",
+    "nyc": "^15.0.1",
+    "prettier": "^2.0.2"
   }
 }
