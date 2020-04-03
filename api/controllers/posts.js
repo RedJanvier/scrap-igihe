@@ -52,7 +52,7 @@ export const get_all = async (req, res, next) => {
                       .then((pst) => {
                         console.log(
                           pst[0].id,
-                          ' ✅was added to database in posts table.'.green
+                          ' ✅ was added to database in posts table.'.green
                         );
                         posts.push(pst[0]);
                       })
@@ -66,6 +66,7 @@ export const get_all = async (req, res, next) => {
           }
         });
       }
+      console.log(titles, ' ✅was added to database in posts table.'.green);
       res.status(200).json(posts);
     });
   } catch (err) {
@@ -76,8 +77,8 @@ export const get_all = async (req, res, next) => {
   }
 };
 
-export function get_single(req, res, next) {
-  const url = req.query.url;
+export const get_single = (req, res, next) => {
+  const url = req.params.id;
   // request (`http://www.igihe.com/${url}`, (error, response, html) => {
   //     if (!error && response.statusCode == 200) {
   //         const $ = cheerio.load(html);
@@ -94,7 +95,7 @@ export function get_single(req, res, next) {
   //         post['images'] = images;
   db('posts')
     .select('title', 'body', 'images', 'tags', 'date')
-    .where('url', '=', url)
+    .where('id', '=', url)
     .then((posts) => {
       res.status(200).json({ message: 'posts successfully fetched', posts });
     })
@@ -104,4 +105,4 @@ export function get_single(req, res, next) {
     });
   //     }
   // });
-}
+};

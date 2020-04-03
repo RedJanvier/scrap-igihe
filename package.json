@@ -8,7 +8,8 @@
     "start": "babel-node app",
     "reset:db": "(dropdb --if-exists -U postgres igihe2 && createdb -U postgres igihe2)",
     "migrate": "npm run reset:db && knex migrate:latest",
-    "seed": "npm run migrate && knex seed:run"
+    "seed": "npm run migrate && knex seed:run",
+    "test": "cross-env NODE_ENV=test npm run seed && cross-env NODE_ENV=test mocha --require @babel/register tests/*.test.js --exit"
   },
   "keywords": [
     "webscrapping",
@@ -31,8 +32,10 @@
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.0",
     "@babel/node": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "eslint": "^6.8.0",

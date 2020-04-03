@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { get_all, get_single } from '../controllers/posts';
+import * as posts from '../controllers/posts';
 
 const router = Router();
 
-router.get('/', get_all);
-router.get('/post', get_single);
+router.get('/', posts.get_all);
+router.get('/post', posts.get_single);
 
 export default router;

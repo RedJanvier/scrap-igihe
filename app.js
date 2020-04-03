@@ -1,6 +1,6 @@
 import 'colors';
 import express from 'express';
-import routes from './api/routes';
+import routes from './api/routes/index';
 
 const PORT = process.env.PORT || 4000;
 const app = express();
