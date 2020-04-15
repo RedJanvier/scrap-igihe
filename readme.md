@@ -6,6 +6,27 @@
 
 A REST-API that provides all frontpage informations (news) on the [igihe website](http://igihe.com) `for free`
 
+## PREREQUISITES
+
+- NodeJs installed. [find it](https://nodejs.org/en/)
+- PostgreSQL installed. [find it](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)
+- Text Editor of your choice. [find it](https://code.visualstudio.com/)
+
+## Getting Started
+
+Run the following commands
+
+```
+createdb igihe2
+npm run seed
+```
+
+Make a `.env file` based on `.example.env file` then
+
+Run `npm run dev` to start the server in development or
+
+Run `npm start` for production
+
 ## Features to implement
 
 - ✔ User should be able to see all news
