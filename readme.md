@@ -5,3 +5,46 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/c74c048c9917791736ab/maintainability)](https://codeclimate.com/github/RedJanvier/scrap-igihe/maintainability)
 
 A REST-API that provides all frontpage informations (news) on the [igihe website](http://igihe.com) `for free`
+
+## Features to implement
+
+- ✔ User should be able to see all news
+- ✔ User should be able to see single news detailed
+
+## Routes
+
+#### See all news
+
+```
+[GET] /api/v2/posts/
+
+:body: none
+```
+
+#### See a single news detailed
+
+```
+[GET] /api/v2/members/:postId
+
+:body: none
+```
+
+## Tech stack
+
+- Knex
+- Node JS
+- Express JS
+- PostgreSQL
+- mocha, chai & chai-http
+- cheerio JS (scrap library)
+
+## Author
+
+### **RedJanvier**
+
+## Contacts
+
+[Github](https://github.com/RedJanvier)
+[Twitter](https://twitter.com/red_janvier)
+[YouTube](https://www.youtube.com/channel/UCrQBNajZa-ibHBerJQ0kAiQ)
+[Facebook](https://facebook.com/jan.h.red)
