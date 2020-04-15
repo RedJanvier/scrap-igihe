@@ -1,6 +1,5 @@
 import request from 'request';
 import { load } from 'cheerio';
-
 import db from '../config/db';
 
 const getTags = (link) => {
