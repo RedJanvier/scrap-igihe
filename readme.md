@@ -19,6 +19,7 @@ Run the following commands
 ```
 createdb igihe2
 npm run seed
+npm install
 ```
 
 Make a `.env file` based on `.example.env file` then

@@ -6,6 +6,9 @@ const getTags = (link) => {
   return link.split('/', 2).filter((l) => l !== 'article');
 };
 
+// @desc        Get all posts in database
+// @Route       GET /api/v2/posts
+// @Access      public
 export const get_all = async (req, res, next) => {
   try {
     const posts = await db('posts').select('*');
@@ -65,8 +68,7 @@ export const get_all = async (req, res, next) => {
           }
         });
       }
-      console.log(titles, ' ✅was added to database in posts table.'.green);
-      res.status(200).json(posts);
+      return res.status(200).json(posts);
     });
   } catch (err) {
     console.log(err);
@@ -76,6 +78,9 @@ export const get_all = async (req, res, next) => {
   }
 };
 
+// @desc        Get a single post in database
+// @Route       GET /api/v2/posts/:postId
+// @Access      public
 export const get_single = (req, res, next) => {
   const url = req.params.postId;
   // request (`http://www.igihe.com/${url}`, (error, response, html) => {
