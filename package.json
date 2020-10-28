@@ -2,7 +2,7 @@
   "name": "scrap-igihe",
   "version": "1.0.0",
   "description": "This is a simple application of web scrapping JS Library Cheerio and Request with express framework.",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node app",
     "start": "cross-env NODE_ENV=production babel-node app",

@@ -77,7 +77,7 @@ export const get_all = async (req, res, next) => {
 };
 
 export const get_single = (req, res, next) => {
-  const url = req.params.postId;
+  const url = req.params.id;
   // request (`http://www.igihe.com/${url}`, (error, response, html) => {
   //     if (!error && response.statusCode == 200) {
   //         const $ = cheerio.load(html);
